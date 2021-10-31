@@ -15,3 +15,37 @@ const changeMenu = () => {
   menus[2].remove();
 }
 // menus変数の中身　→ [p.menu, p.menu, p.menu]
+
+
+// 3.連想配列のkey-valueを順番に取得する
+let hash = {
+  key0: "value0",
+  key1: "value1"
+};
+
+for (let key in hash) {
+  alert('key:' + key + ' value:' + hash[key]);
+}
+
+// mapを使う
+{
+  let hash = {
+    key0: "value0", key1: "value1"
+  };
+
+  Object.keys(hash).map(key => console.log('key:' + key + ' value:' + hash[key]));
+  // [undefined, undefined]が出てしまうが内容を確認したいだけなら十分
+  // Object.keys(obj) オブジェクトのプロパティ名(キー)を取得
+  // 配列に使う場合
+  // const array = ["sa", "mu", "ra", "i"];
+  // console.log(Object.keys(array));
+  // ["0", "1", "2", "3"] → インデクスを取得
+}
+
+//円グラフ用にカテゴリと合計金額を配列に入れる
+let keyArray = [];
+let valueArray = [];
+for (key in pieChartData) {
+  keyArray.push(key);
+  valueArray.push(pieChartData[key])
+}
