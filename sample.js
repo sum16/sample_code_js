@@ -107,3 +107,18 @@ for (let i=0; i < list3.length; i++) {
   // getXXXとqueryXXXの使い分け
   // 特定のid値、class属性などで要素を検索できる場合 → getXXXメソッド
   // より複雑な検索条件で検索をしたい場合(getXXXより低速) → queryXXXメソッド 
+
+
+
+// ノードウォーキングを使う
+// ノードウォーキング → あるノードを起点として、相対的な位置関係からノードを取得する
+const s = document.getElementById('food')
+const opts = s.childNodes; //子ノードを取得
+// 子ノードを順に取得
+for (let i=0; i < opts.length; i++) {
+  const opt = opts.item(i);
+
+  if (opt.nodeType === 1) {  //子ノードが要素ノードである場合にログを表示  1 ELEMENT_NODE = 要素ノード
+    console.log(opt.value);
+  }
+}
