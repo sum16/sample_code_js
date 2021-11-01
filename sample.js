@@ -82,4 +82,4 @@ result.textContent = current.toLocaleString();
 // 6.テキストボックスに現在時刻を表示
   const current_time = new Date();
   const nam = document.getElementsByName('time'); //inputのname属性を取得
-  nam[0].value = current_time.toLocaleString();
+  nam[0].value = current_time.toLocaleString(); //nam[0]としているのはgetElementsByNameメソッドの戻り値がノードの集合(NodeListオブジェクト)のため
