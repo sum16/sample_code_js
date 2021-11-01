@@ -93,3 +93,17 @@ for (let i=0; i < list_class.length; i++) {
 }
 
   //複数のクラス名を取得することも可能 ('my me mu') → この場合同一タグにmy me muが指定されていないと取得できない
+
+
+
+// 8.「id='list'」である要素の配下から「class='external'であるアンカータグ」を取り出し、そのリンク先を列挙
+const list3 = document.querySelectorAll('#list .external')
+
+for (let i=0; i < list3.length; i++) {
+  console.log(list3[i].href);
+}
+
+  // セレクター式で取得する
+  // getXXXとqueryXXXの使い分け
+  // 特定のid値、class属性などで要素を検索できる場合 → getXXXメソッド
+  // より複雑な検索条件で検索をしたい場合(getXXXより低速) → queryXXXメソッド 
