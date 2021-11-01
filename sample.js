@@ -70,8 +70,8 @@ result.textContent = current.toLocaleString();
 // 5.aタグを全て取得し、リンク先を一覧表示する
   const list = document.getElementsByTagName('a');
   for (let i=0; i < list.length; i++) {
-    console.log(list.item(i).href);
-    console.log(list[i].href); // 同じ意味
+    // console.log(list.item(i).href);
+    // console.log(list[i].href); // 同じ意味
   }
 
     // item(i) → i番目の要素を取得(iは0~length-1の範囲)
@@ -83,3 +83,13 @@ result.textContent = current.toLocaleString();
   const current_time = new Date();
   const nam = document.getElementsByName('time'); //inputのname属性を取得
   nam[0].value = current_time.toLocaleString(); //nam[0]としているのはgetElementsByNameメソッドの戻り値がノードの集合(NodeListオブジェクト)のため
+
+
+
+// 7.class名からリンクを取得し、一覧表示する
+const list_class = document.getElementsByClassName('my');
+for (let i=0; i < list_class.length; i++) {
+  console.log(list_class[i].href);
+}
+
+  //複数のクラス名を取得することも可能 ('my me mu') → この場合同一タグにmy me muが指定されていないと取得できない
