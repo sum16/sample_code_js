@@ -64,3 +64,15 @@ result.textContent = current.toLocaleString();
 
   // ●textContent
   // "HTMLを解釈せずにそのまま文字として出力する"のがtextContent
+
+
+
+  // 5.aタグを全て取得し、リンク先を一覧表示する
+  const list = document.getElementsByTagName('a');
+  for (let i=0; i < list.length; i++) {
+    console.log(list.item(i).href);
+    console.log(list[i].href); // 同じ意味
+  }
+
+    // item(i) → i番目の要素を取得(iは0~length-1の範囲)
+    // namedItem(name) →id、またはname属性が一致する要素を取得
