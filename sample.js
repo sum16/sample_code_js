@@ -67,7 +67,7 @@ result.textContent = current.toLocaleString();
 
 
 
-  // 5.aタグを全て取得し、リンク先を一覧表示する
+// 5.aタグを全て取得し、リンク先を一覧表示する
   const list = document.getElementsByTagName('a');
   for (let i=0; i < list.length; i++) {
     console.log(list.item(i).href);
@@ -76,3 +76,10 @@ result.textContent = current.toLocaleString();
 
     // item(i) → i番目の要素を取得(iは0~length-1の範囲)
     // namedItem(name) →id、またはname属性が一致する要素を取得
+
+
+
+// 6.テキストボックスに現在時刻を表示
+  const current_time = new Date();
+  const nam = document.getElementsByName('time'); //inputのname属性を取得
+  nam[0].value = current_time.toLocaleString();
