@@ -149,3 +149,12 @@ function btn_click() {
       window.alert('ボタンがクリックされたよ');
     }
   }
+
+  // イベントリスナーを使った書き方
+  // ページロード時に実行されるイベントハンドラを登録
+  // DOMContentLoaded → コンテンツ本体が読み込まれたタイミングで実行される/ページの初期化は基本的にDOMContentLoadedを使う
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('btn1').addEventListener('click', function() {
+      window.alert('ボタンがクリックされました')
+    })
+  })
