@@ -14,3 +14,26 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log(name.value);
   })
 }, false);
+
+
+
+// チェックボックス/ラジオボタンの値を取得する
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('btn1').addEventListener('click', function() {
+
+    // 選択肢を格納するための配列
+    const result = [];
+    const foods = document.getElementsByName('food')
+
+    // チェックボックスを走査し、チェック状態にあるのかを確認
+    for (let i=0; i < foods.length; i++) {
+      const food = foods[i];
+      if (food.checked === true) {  // ラジオボタンがチェックされているかどうかはcheckedプロパティを用いる
+        result.push(food.value);
+      }
+    }
+    window.alert(result.toString());
+  }, false);
+}, false);
+
+  //name属性が共通のものを取得するときはgetElementsByNameを使う
