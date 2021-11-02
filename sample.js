@@ -110,7 +110,7 @@ for (let i=0; i < list3.length; i++) {
 
 
 
-// ノードウォーキングを使う
+// 9.ノードウォーキングを使う
 // ノードウォーキング → あるノードを起点として、相対的な位置関係からノードを取得する
 const s = document.getElementById('food')
 const opts = s.childNodes; //子ノードを取得
@@ -122,3 +122,30 @@ for (let i=0; i < opts.length; i++) {
     console.log(opt.value);
   }
 }
+
+  // fistChildで書き換え
+  // const child = s.firstChild  // 最初の子ノードを取得
+  // // 子ノードが存在する間、ループを繰り返す
+  // while (child)  {
+  //   if (child.nodeType === 1) {
+  //     console.log(child.value);
+  //   }
+  //   次の子ノードを取得
+  //   child1 = child.nextSibling;
+  //   console.log(child1);
+  // }
+
+
+
+// 10.ボタンがクリックされたらダイアログを表示する
+function btn_click() {
+  window.alert('ボタンがクリックされました');
+}
+
+  // ページロード時に実行されるイベントハンドラを登録
+  // htmlの中にjsを混在させないパターン
+  window.onload = function() {
+    document.getElementById('btn').onclick = function() {
+      window.alert('ボタンがクリックされたよ');
+    }
+  }
